@@ -104,7 +104,6 @@ a {
 }
 .slider-controll .slider-controll__img {
     background: url('/small.jpg') center center/cover no-repeat;
-    display: block;
     margin: 0 auto;
     width: 75px;
     height: 60px;
@@ -113,11 +112,7 @@ a {
 .slider-controll__inner .slick-track {
     transform: none!important;
 }
-/* .border-top {
-    animation-name: changeBorderTop;
-    animation-duration: 1.2s;
-    animation-iteration-count: 1
-} */
+
 
 .slider-controll__item .empty-top-right {
     position: absolute;
@@ -138,6 +133,12 @@ a {
     right: -3px;
     z-index: 2;
     border-radius: 3px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-bottom-color: #000;
+    border-left-color: #000;
+    border-bottom-style: solid;
+    border-left-style: solid;
 }
 @keyframes changeTopRight {
     from { 
@@ -157,14 +158,20 @@ a {
     from { 
         width: 0;
         height: 3px;
+        border-bottom-width: 3px;
+        border-left-width: 3px;
     }
     50% {
         width: 140px;
         height: 3px;
+        border-bottom-width: 3px;
+        border-left-width: 3px;
     }
     to {
         width: 140px;
         height: 93px;
+        border-bottom-width: 3px;
+        border-left-width: 3px;
     }
 }
 
@@ -185,25 +192,23 @@ a {
     animation-delay: 2s;
     animation-duration: 2s;
     animation-fill-mode: forwards;
+
 }
-.empty-border {
-    border-bottom: 3px solid #000;
-    border-left: 3px solid #000;
-}
+
 
 .empty-top-first {
     border-top: 3px solid #000;
     border-right: 3px solid #000;
     animation-name: changeTopRight;
     animation-iteration-count: 1;
-    animation-duration: 1.8s;
+    animation-duration: 1.4s;
     animation-fill-mode: forwards;
 }
 .empty-bottom-first {
     /* background-color: #000; */
     animation-name: changeBottomLeft;
     animation-iteration-count: 1;
-    animation-delay: 1.8s;
-    animation-duration: 1.8s;
+    animation-delay: 1.4s;
+    animation-duration: 1.4s;
     animation-fill-mode: forwards;
 }

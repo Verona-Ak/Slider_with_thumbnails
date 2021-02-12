@@ -2,9 +2,8 @@
 $(document).ready(function(){
     const controlls = document.querySelectorAll('.slider-controll__item'),
         emptyTopRight = document.querySelectorAll('.empty-top-right'),
-        emptyBottomLeft = document.querySelectorAll('.empty-bottom-left'),
-        timer = 2000;
-    controllAction(controlls[0], 'empty-top-first', 1800, 'empty-bottom-first');
+        emptyBottomLeft = document.querySelectorAll('.empty-bottom-left');
+    controllAction(controlls[0], 'empty-top-first', 'empty-bottom-first');
 
 
 
@@ -36,16 +35,14 @@ $(document).ready(function(){
 
     $('.slider-controll__inner').on('beforeChange', function(event, slick, currentSlide, nextSlide){
         clear();
-        controllAction(controlls[nextSlide], 'empty-top', timer, 'empty-bottom');
+        controllAction(controlls[nextSlide], 'empty-top', 'empty-bottom');
     });
 
-    function controllAction(controll, top, time, bottom) {
+    function controllAction(controll, top, bottom) {
         for(let i = 0; i < emptyTopRight.length; i++) {
             if(controll === emptyTopRight[i].closest('.slider-controll__item')) {
                 emptyTopRight[i].classList.add(top);
-                let timerId = setTimeout(function(){emptyBottomLeft[i].classList.add('empty-border');}, time);
                 emptyBottomLeft[i].classList.add(bottom);
-                
             }
         }
     }
@@ -54,7 +51,6 @@ $(document).ready(function(){
         for(let i = 0; i < emptyTopRight.length; i++) {
             emptyTopRight[i].classList.remove('empty-top');
             emptyTopRight[i].classList.remove('empty-top-first');
-            emptyBottomLeft[i].classList.remove('empty-border');
             emptyBottomLeft[i].classList.remove('empty-bottom');
             emptyBottomLeft[i].classList.remove('empty-bottom-first');
 
