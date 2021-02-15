@@ -15,7 +15,10 @@ $(document).ready(function(){
         arrows: false,
         asNavFor: '.slider-controll__inner',
         infinite: true,
-        autoplay: true
+        autoplay: true,
+        pauseOnHover: false,
+        pauseOnFocus: false,
+        autoplaySpeed: 6000
         
     });
     $('.slider-controll__inner').slick({
